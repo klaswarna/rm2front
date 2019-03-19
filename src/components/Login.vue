@@ -42,6 +42,9 @@ export default {
             email: "",
         }
     },
+    created () {
+            document.title = "Logga in - EkoEnergiBörsen";
+    },
     methods: {
         login(email, password) {
             let that = this;

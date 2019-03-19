@@ -53,6 +53,9 @@ export default {
             //name: window.name,
         }
     },
+    created () {
+            document.title = "Skaffa konto - EkoEnergiBörsen";
+    },
     methods: {
         signin(email, name, password) {
             console.log("signin-försök");

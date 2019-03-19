@@ -1,5 +1,8 @@
 <template>
 <div>
+
+
+
 <div class="om">
 
 <h2>Bli rik på grön energi</h2>
@@ -47,7 +50,10 @@ export default {
     },
     components: {
         Footer
-    }
+    },
+    created () {
+            document.title = "Om - EkoEnergiBörsen";
+    },
 }
 </script>
 

@@ -32,7 +32,10 @@ export default {
     },
     components: {
         Footer
-    }
+    },
+    created () {
+            document.title = "Felaktiga inloggningsuppgifter - EkoEnergiBörsen";
+    },
 }
 </script>
 

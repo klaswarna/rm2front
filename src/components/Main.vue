@@ -1,5 +1,6 @@
 <template>
 <div>
+<title>Ballen</title>
 
 <div class="storruta" v-if='!token'>
     <h1>Du måste vara inloggad för att nå denna sida!</h1>
@@ -70,10 +71,11 @@ import VueNativeSock from 'vue-native-websocket'
 export default {
     name: 'Main',
     props: {
-        msg: String
+        msg: String,
     },
     data() {
         return {
+            title: "otto",
             bolagslista: [
                 ["Vindkraft", "wind.jpg", "bolag1"],
                 ["Vattenkraft", "waterfall.jpg", "bolag2"],
@@ -87,7 +89,7 @@ export default {
             insattning:"",
             borsvarde:"",
             capital: {
-                capital:"",
+                capital:0,
                 stock:[]
             },
             graf: [],
@@ -106,6 +108,8 @@ export default {
         for (var i = 0; i < 5; i++) {
             this.aktievarde[i] = window.company[i][5];
         }
+        document.title = "Aktiekurser - EkoEnergiBörsen";
+
     },
     updated() {
         for (var i = 0; i < 5; i++) {
@@ -140,9 +144,9 @@ export default {
             })
             .then(function(result) {
                 // eslint-disable-next-line
-                console.log("Detta är tillgängligt resultat från sökning:");
-                console.log(result);
-                that.capital = result;
+                //console.log("Detta är tillgängligt resultat från sökning:");
+                //console.log(result);
+                that.capital = result
             });
         },
         buy: function(bolag, antal) {
@@ -197,13 +201,14 @@ export default {
                 that.insattning = "";
             })
         },
-        diagram: function(rates, objekt, newValue) {
+        diagram: function(rates, objekt) {
             function logfixa(a) {
                 return Math.log2(a/100)*(-25) + 50;
             }
             var ctx = objekt.getContext("2d");
 
             ctx.beginPath();
+            ctx.lineWidth = 3;
             ctx.clearRect(0,0, 100, 100);
             ctx.strokeStyle = "#00AA00";
 
@@ -213,6 +218,14 @@ export default {
                 ctx.lineTo(20*i, logfixa(rates[i]));
                 ctx.stroke();
             }
+            ctx.lineTo(100,100);
+            ctx.stroke();
+            ctx.lineTo(0,100);
+            ctx.stroke();
+            ctx.lineTo(0, logfixa(rates[0]));
+            ctx.stroke();
+            ctx.fillStyle = "#AAFFAA";
+            ctx.fill();
         },
         updateRate: function (newValue) {
             for (var i = 0; i<5; i++) {
@@ -237,7 +250,7 @@ export default {
             this.vm.$options.sockets.onmessage = (data) => {
                 var jdatan = JSON.parse(data.data);
                 this.updateRate(jdatan.aktier);
-                console.log(jdatan.aktier);
+                //console.log(jdatan.aktier);
             }
         },
         disconnecta() {

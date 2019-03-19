@@ -16,12 +16,13 @@ export default new Router({
     {
         path: '/',
         name: 'Start',
-        component: Start
+        component: Start,
     },
     {
         path: '/om',
         name: 'Om',
-        component: Om
+        component: Om,
+        meta: {title: "Sune"}
     },
     {
         path: '/signin',
