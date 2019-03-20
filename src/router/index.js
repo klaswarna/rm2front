@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-//import VueNativeSock from 'vue-native-websocket'
 import Start from '@/components/Start'
 import Om from '@/components/Om'
 import Signin from '@/components/Signin'

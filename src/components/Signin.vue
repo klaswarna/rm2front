@@ -33,7 +33,6 @@
 
 
 <script>
-//import Vue from 'vue'
 
 import Footer from './Footer.vue'
 
@@ -48,9 +47,6 @@ export default {
             password: "",
             email: "",
             name: "",
-            //password: window.password,
-            //email: window.email,
-            //name: window.name,
         }
     },
     created () {
@@ -62,12 +58,10 @@ export default {
             console.log(name);
             let that = this;
             that.text = "";
-            //fetch("http://172.29.61.161:1337/signin",{
             fetch("https://rm2back.kwramverk.me/signin",{
 
                 method: 'POST',
                 headers: new Headers({
-                    //'x-access-token': 'JWT_TOKEN',
                     'Content-Type': 'application/json'
                 }),
                 body: JSON.stringify({

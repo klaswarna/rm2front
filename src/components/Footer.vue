@@ -43,13 +43,6 @@ export default {
     },
     data() {
         return {
-            //wind : window.document.JWT_TOKEN
-            //user:"skall var relativ på nåt sätt"
-
-            // token: window.token || "",
-            // email: window.email || "",
-            // name: window.name || ""
-
             token: this.$session.get("token"),
             email: this.$session.get("email"),
             name: this.$session.get("name")
@@ -73,12 +66,8 @@ export default {
 
 .fotnot {
     position:absolute;
-    /*margin-top: 100px;*/
-    /*text-align: left;*/
-    /*bottom: 1em;*/
     left:0px;
     color: black;
-    /*bottom: 10px;*/
     width: 100%;
 }
 .delwrap {
@@ -94,8 +83,6 @@ export default {
     display: inline-block;
     text-align: center;
     position:relative;
-    /*left:33%;*/
-
     width: 33%;
 }
 .del3 {

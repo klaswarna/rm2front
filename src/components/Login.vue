@@ -49,7 +49,6 @@ export default {
         login(email, password) {
             let that = this;
             that.text = "";
-            //fetch("http://172.29.61.161:1337/login",{
             fetch("https://rm2back.kwramverk.me/login",{
                 method: 'POST',
                 headers: new Headers({

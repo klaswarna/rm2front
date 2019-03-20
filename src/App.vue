@@ -10,13 +10,10 @@
 </template>
 
 <script>
-//import Start from './components/Start.vue'
+
 
 export default {
   name: 'app',
-    // components: {
-  //   Start
-  // }
 }
 </script>
 
@@ -28,11 +25,6 @@ export default {
   text-align: center;
   color: #2c3e50;
 
-  /*margin-top: 60px;*/
-  /*background-image: url("../public/wind-power.jpg");
-  background-size: cover;*/
-
-  /*min-height: 100vh;*/
 
 }
 img {
@@ -41,15 +33,12 @@ img {
     top:0;
     left:0;
     width:100%
-    /*display: none;*/
 }
 
 .banderolltext {
     margin-top:0;
     font-size: 10em;
     margin-bottom: 0;
-    /*top: 2p
-    x;*/
 }
 
 .linkstyle {
@@ -68,6 +57,5 @@ img {
         height:100%;
     }
 }
-
 
 </style>

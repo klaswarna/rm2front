@@ -14,6 +14,7 @@ let browser;
 
 
 // Does not work with WSL!! Use cygwin
+// But it doesn't properly work with cygwin either
 
 
 
@@ -23,7 +24,6 @@ test.describe("rm2front", function() {
         this.timeout(30000);
         browser = new webdriver.Builder().
             withCapabilities(webdriver.Capabilities.firefox()).build();
-            //withCapabilities(webdriver.Capabilities.chrome()).build();
 
         browser.get("http://localhost:8080/#/");
         done();

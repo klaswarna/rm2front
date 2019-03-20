@@ -95,7 +95,6 @@ export default {
             graf: [],
             aktievarde:[],
             websocket: null,
-            //url: "ws://localhost:1337",
             url: "wss://rm2back.kwramverk.me",
             content: null,
             format: "json",
@@ -130,7 +129,6 @@ export default {
         showCapital: function (token) {
             let that = this;
 
-            //fetch("http://172.29.61.161:1337/capital", {
             fetch("https://rm2back.kwramverk.me/capital", {
                 method: 'POST',
                 headers: new Headers({
@@ -143,9 +141,6 @@ export default {
                 return response.json();
             })
             .then(function(result) {
-                // eslint-disable-next-line
-                //console.log("Detta är tillgängligt resultat från sökning:");
-                //console.log(result);
                 that.capital = result
             });
         },
@@ -161,7 +156,6 @@ export default {
             }
             let that = this;
 
-            //fetch("http://172.29.61.161:1337/capital/buy", { //lokalt
             fetch("https://rm2back.kwramverk.me/capital/buy", {
                 method: 'POST',
                 headers: new Headers({
@@ -185,7 +179,6 @@ export default {
         insertCash: function(cash) {
             let that = this;
 
-            //fetch("http://172.29.61.161:1337/capital/insert", { //lokalt
             fetch("https://rm2back.kwramverk.me/capital/insert", {
                 method: 'POST',
                 headers: new Headers({
@@ -241,16 +234,14 @@ export default {
             });
             //eslint-disable-next-line
             console.log("Connecting to: " + this.url);
-            //const vm = new Vue()
             this.vm = new Vue();
 
+            //eslint-disable-next-line
             console.log("the websocket is now open.");
 
-            // //console.log(vm);
             this.vm.$options.sockets.onmessage = (data) => {
                 var jdatan = JSON.parse(data.data);
                 this.updateRate(jdatan.aktier);
-                //console.log(jdatan.aktier);
             }
         },
         disconnecta() {
@@ -261,7 +252,7 @@ export default {
         if(this.token) {
             for (var i = 0; i < 5; i++) {
                 this.graf[i] = this.$refs.diagram[i];
-                this.diagram(window.company[i], this.graf[i]); ///noll istället?
+                this.diagram(window.company[i], this.graf[i]);
                 this.aktievarde[i] = window.company[i][5];
             }
             this.connect();
@@ -301,7 +292,6 @@ a {
 .fotnot {
     position: relative;
     text-align: left;
-    /*bottom: 1em;*/
     left:0px;
     color: black;
 }

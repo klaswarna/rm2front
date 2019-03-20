@@ -1,5 +1,25 @@
 # rm2front
 
+
+### Frontend
+
+Jag har använt Vue på klientsidan, eftersom jag kände till det från ett tidigare projekt och
+ville vidareutveckla mina kunskaper där. Att innehåll, skript och CSS ligger på samma sida upplevde jag
+som smidigt till att börja med, men klumpigare när man ville ha generella funktioner för alla sidor och likaså
+likastylade element på olika sidor. Allt eftersom blev jag bättre på att utnyttja Vue:s specialmöjligheter att
+referera till element o.s.v.
+
+Aktiekursen uppdateras ständigt med Vue-native-Websocket. Det fungerade smidigt.
+
+Graferna ritas med Canvas. Nytt för mig, men det gick ganska bra.
+
+Huvudsidan består bl.a. av fem likadana element med graf, aktiekurser o.s.v. Från början skrev jag dem var för
+sig, men använde senare en lopfunktion i Vue för att bli mera DRY. Dock fungerade det inte riktigt som jag
+trott, så vissa lösningar hade blivit ännu bättre om jag tänkt lop från början och vetat hur den fungerade. Så där finns
+vissa inbyggda klantigheter, men det visuella resultatet är som det ska.
+
+### Frontend-tester
+
 Jag försökte mig på krav 5 med use-cases i Selenium.
 
 Första use-caset är enkelt. Titta på förstasidan och se om överskriften stämmer.
